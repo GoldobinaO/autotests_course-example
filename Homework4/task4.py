@@ -10,22 +10,14 @@
 def multiplication_chain(num):
     count_multy = 0
 
-    while True:
-        if num < 10:
-            break
+    while num >= 10:
+        mult = 1
 
-        lst = list(str(num))
-        lst_new = []
+        for e in str(num):
+            mult *= int(e)
 
-        for e in lst:
-            lst_new.append(int(e))
-
-        s = 1
-        for e in lst_new:
-            s = e * s
         count_multy += 1
-
-        num = s
+        num = mult
 
     return count_multy
 

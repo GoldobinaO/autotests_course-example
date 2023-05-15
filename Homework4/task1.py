@@ -6,7 +6,7 @@
 
 def which_triangle(a, b, c):
     type_triangle = "Не треугольник"
-    if a == b and b == c:
+    if a == b == c:
         type_triangle = "Равносторонний"
     elif a == b or b == c or c == a:
         type_triangle = "Равнобедренный"

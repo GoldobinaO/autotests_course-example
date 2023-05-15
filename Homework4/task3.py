@@ -7,13 +7,10 @@
 # 4 --> 4
 
 def sum_digits(num):
-    lst = list(str(num))
-    lst_new = []
+    our_sum = 0
 
-    for e in lst:
-        lst_new.append(int(e))
-
-    our_sum = sum(lst_new)
+    for e in str(num):
+        our_sum += int(e)
 
     return our_sum
 
