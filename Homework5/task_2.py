@@ -7,14 +7,15 @@
 
 
 def repeats(our_str):
+    """ Считает количество букв в слове.
+        :param our_str - строка
+        :return: строку вида: буква_количество """
     new_str = ''
     letters_dict = {}
 
     for symb in our_str:
-        if symb in letters_dict:
-            letters_dict[symb] += 1
-        else:
-            letters_dict[symb] = 1
+        v = letters_dict.get(symb, 0)
+        letters_dict[symb] = v + 1
         new_str += symb + '_' + str(letters_dict[symb])
     return new_str
 

@@ -7,13 +7,15 @@
 
 
 def letter_stat(our_str):
-
+    """ Считает количество букв в слове.
+        :param our_str - строка
+        :return: словарь вида {буква: количество} """
     letters_dict = {}
+
     for s in our_str:
-        if s in letters_dict:
-            letters_dict[s] += 1
-        else:
-            letters_dict[s] = 1
+        v = letters_dict.get(s, 0)
+        letters_dict[s] = v + 1
+
     return letters_dict
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
