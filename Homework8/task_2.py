@@ -18,10 +18,6 @@ import unittest  # Не удалять
 
 class Trigon:
     def __init__(self, *args):
-        self.numbers = self.test(*args)
-
-    @staticmethod
-    def test(*args):
         if len(args) != 3:
             raise IndexError(f'Передано {len(args)} аргументов, а ожидается 3')
         elif any(isinstance(y, str) for y in args):
@@ -31,7 +27,8 @@ class Trigon:
         elif args[0] + args[1] < args[2] or args[1] + args[2] < args[0] or args[0] + args[2] < args[1]:
             raise Exception('Не треугольник')
         else:
-            return args
+            self.args = args
+
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
