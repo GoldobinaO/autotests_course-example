@@ -38,12 +38,11 @@ class PersonInfo:
         word = ''.join(self.position)
         letters = {}
         for e in word:
-            v = letters.get(e, 0)
-            letters[e] = v + 1
+            letters[e] = letters.get(e, 0) + 1
         values = list(letters.values())
         values.sort()
 
-        return 1337 * self.age * (values[-1] + values[-2] + values[-3])
+        return 1337 * self.age * sum(values[-3:])
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 

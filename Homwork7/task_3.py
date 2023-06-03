@@ -49,8 +49,8 @@ class Bus(PublicTransport):
 
     @park.setter
     def park(self, number):
-        if 1000 <= number <= 9999:
-            self.__park = number
+        assert 1000 <= number <= 9999
+        self.__park = number
 
 
 class Tram(PublicTransport):
