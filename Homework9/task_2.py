@@ -37,10 +37,10 @@ import time
 
 def func_log(file_log='log.txt'):
     def write_func(func):
-        def wrapper(*args, **kwargs):
+        def wrapper():
             with open(file_log, 'a', encoding='utf-8') as file:
                 file.write(f'{func.__name__} вызвана {datetime.datetime.now().strftime("%d.%m %H:%M:%S")}\n')
-            func(*args, **kwargs)
+            func()
         return wrapper
     return write_func
 
